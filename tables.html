@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="mx-auto" style=width:600px;>
+            <div class="container">
+                <h1 class="display-4">Hot Restaurant</h1>
+                <p class="lead">Current Reservations and Waiting List</p>
+
+                <a href="/reserve">
+                    <button type="button" class="btn btn-danger">Make Reservation</button>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="card ">
+        <div class="card-header">
+            <h4>Current Reservation</h4>
+        </div>
+
+        <div class="card-body Reservation">
+
+        </div>
+
+    </div>
+    <div class="card-header ">
+        <h4>Waiting List</h4>
+    </div>
+
+    <div class="card-body waitingList">
+    </div>
+
+    </div>
+
+
+
+    <a href="/tables" class="card-link">Clear Table</a>
+    <a href="/api/tables" class="card-link">API Table Link</a>
+    <a href="/api/waitlist" class="card-link">API Wait List</a>
+
+
+    <script>
+        window.onload = function () {
+            $.get("/api/tables", function (data) {
+                for (i = 0; i < 5; i++) {
+
+                    let id = $(".Reservation").append("ID: " + data[i].id + "<br/>");
+                    let name = $(".Reservation").append("Name: " + data[i].name + "<br/>");
+                    let phone = $(".Reservation").append("Phone: " + data[i].phone + "<br/>");
+                    let email = $(".Reservation").append("Email: " + data[i].email + "<br/>");
+                    let space = $(".Reservation").append("<br/>")
+
+                }
+            })
+
+            $.get("/api/waitlist", function (data2) {
+                for (i = 0; i < 5; i++) {
+
+                    let id2 = $(".waitingList").append("ID: " + data2[i].id + "<br/>");
+                    let name2 = $(".waitingList").append("Name: " + data2[i].name + "<br/>");
+                    let phone2 = $(".waitingList").append("Phone: " + data2[i].phone + "<br/>");
+                    let email2 = $(".waitingList").append("Email: " + data2[i].email + "<br/>");
+                    let space2 = $(".waitingList").append("<br/>")
+                }
+            })
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

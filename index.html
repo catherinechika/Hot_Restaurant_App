@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="mx-auto" style=width:600px;>
+            <div class="container">
+                <h1 class="display-4">Hot Restaurant</h1>
+                <p class="lead">We only have 5 tables! Book your seat before they all are gone!</p>
+
+                <a href="/tables">
+                    <button type="button" class="btn btn-primary" id="viewTables">View Tables</button>
+                </a>
+                <a href="/reserve">
+                    <button type="button" class="btn btn-danger">Make Reservation</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="/api/tables" class="card-link">API Table Link</a>
+    <a href="/api/waitlist" class="card-link">API Wait List</a>
+
+</body>
+
+</html>
